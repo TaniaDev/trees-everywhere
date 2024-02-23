@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Trees Everywhere{% endblock %}
+
+{% block content %}
+<div>
+    <h2>Welcome to your dashboard, {{ request.user.username }}!</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="logout">Logout</button>
+    </form>
+    <div>
+    <ul>
+        <li><a href="">My Planted Trees</a></li>
+        <li><a href="">Plant a new Tree</a></li>
+        <li><a href="">Account's Plantes Trees</a></li>
+    </ul>
+    </div>
+</div>
+{% endblock %}
