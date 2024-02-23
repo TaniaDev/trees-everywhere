@@ -18,10 +18,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from tree import views as treeViews
 from user import views as userViews
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("login/", userViews.user_login, name="login"),
-    path("", userViews.dashboard, name="dashboard"),
+    path("index/", userViews.dashboard, name="dashboard"),
+    # <-- API -->
+    path("api/planted_tree/", treeViews.PlantedTreeList.as_view()),
 ]
