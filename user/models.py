@@ -6,7 +6,7 @@ class User(AbstractUser):
     accounts = models.ManyToManyField("account.Account")
 
     def __str__(self):
-        return f"Username: {self.username}"
+        return str(self.username)
 
 
 class Profile(models.Model):
@@ -15,4 +15,4 @@ class Profile(models.Model):
     joined = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"User: {self.user}"
+        return str(self.user)

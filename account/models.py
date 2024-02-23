@@ -9,7 +9,4 @@ class Account(models.Model):
     users = models.ManyToManyField("user.User")
 
     def __str__(self):
-        return f"Name: {self.name}"
-
-    def get_absolute_url(self):
-        return reverse("account-list")
+        return str(self.name)

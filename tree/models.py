@@ -6,7 +6,7 @@ class Tree(models.Model):
     scientific_name = models.CharField(max_length=50)
 
     def __str__(self):
-        return f"Name: {self.name}"
+        return str(self.name)
 
 
 class PlantedTree(models.Model):
@@ -17,4 +17,4 @@ class PlantedTree(models.Model):
     tree = models.ForeignKey("tree.Tree", on_delete=models.CASCADE, null=True)
 
     def __str__(self):
-        return f"Tree: {self.tree}"
+        return str(self.tree)
